@@ -1,3 +1,12 @@
+Trebuie instalat separat runtime-ul CXF de la apache:
+	http://cxf.apache.org
+
+Apoi trebuie adaugata librarie in Eclipse:
+	Preferences > Web Services > CXF 2.x Preferences
+se adauga calea catre runtime-ul CXF.
+
+In caz contrar, nu se poate genera serviciul web.
+
 wsdl2java -client 
 	-d /home/radu/workspace-jee/lab10Client/.cxftmp/src 
 	-classdir /home/radu/workspace-jee/lab10Client/build/classes 
