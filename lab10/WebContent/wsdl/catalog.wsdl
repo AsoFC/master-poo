@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="CatalogService" targetNamespace="http://lab10/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://lab10/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://lab10/" schemaLocation="catalog_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="adaugaNota">
+    <wsdl:part name="parameters" element="tns:adaugaNota">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cautaStudentResponse">
+    <wsdl:part name="parameters" element="tns:cautaStudentResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="stergeStudentResponse">
+    <wsdl:part name="parameters" element="tns:stergeStudentResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cautaStudent">
+    <wsdl:part name="parameters" element="tns:cautaStudent">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="adaugaNotaResponse">
+    <wsdl:part name="parameters" element="tns:adaugaNotaResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="returneazaStudent">
+    <wsdl:part name="parameters" element="tns:returneazaStudent">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="stergeStudent">
+    <wsdl:part name="parameters" element="tns:stergeStudent">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="adaugaStudent">
+    <wsdl:part name="parameters" element="tns:adaugaStudent">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="returneazaStudentResponse">
+    <wsdl:part name="parameters" element="tns:returneazaStudentResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="adaugaStudentResponse">
+    <wsdl:part name="parameters" element="tns:adaugaStudentResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Catalog">
+    <wsdl:operation name="adaugaNota">
+      <wsdl:input name="adaugaNota" message="tns:adaugaNota">
+    </wsdl:input>
+      <wsdl:output name="adaugaNotaResponse" message="tns:adaugaNotaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returneazaStudent">
+      <wsdl:input name="returneazaStudent" message="tns:returneazaStudent">
+    </wsdl:input>
+      <wsdl:output name="returneazaStudentResponse" message="tns:returneazaStudentResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stergeStudent">
+      <wsdl:input name="stergeStudent" message="tns:stergeStudent">
+    </wsdl:input>
+      <wsdl:output name="stergeStudentResponse" message="tns:stergeStudentResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cautaStudent">
+      <wsdl:input name="cautaStudent" message="tns:cautaStudent">
+    </wsdl:input>
+      <wsdl:output name="cautaStudentResponse" message="tns:cautaStudentResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="adaugaStudent">
+      <wsdl:input name="adaugaStudent" message="tns:adaugaStudent">
+    </wsdl:input>
+      <wsdl:output name="adaugaStudentResponse" message="tns:adaugaStudentResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CatalogServiceSoapBinding" type="tns:Catalog">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="adaugaNota">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="adaugaNota">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="adaugaNotaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="returneazaStudent">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="returneazaStudent">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="returneazaStudentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="stergeStudent">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="stergeStudent">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="stergeStudentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="adaugaStudent">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="adaugaStudent">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="adaugaStudentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cautaStudent">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cautaStudent">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cautaStudentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CatalogService">
+    <wsdl:port name="CatalogPort" binding="tns:CatalogServiceSoapBinding">
+      <soap:address location="http://localhost:8080/lab10/services/CatalogPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

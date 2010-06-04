@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://lab10/" elementFormDefault="unqualified" targetNamespace="http://lab10/" version="1.0">
+<xs:element name="adaugaNota" type="tns:adaugaNota"/>
+<xs:element name="adaugaNotaResponse" type="tns:adaugaNotaResponse"/>
+<xs:element name="adaugaStudent" type="tns:adaugaStudent"/>
+<xs:element name="adaugaStudentResponse" type="tns:adaugaStudentResponse"/>
+<xs:element name="cautaStudent" type="tns:cautaStudent"/>
+<xs:element name="cautaStudentResponse" type="tns:cautaStudentResponse"/>
+<xs:element name="returneazaStudent" type="tns:returneazaStudent"/>
+<xs:element name="returneazaStudentResponse" type="tns:returneazaStudentResponse"/>
+<xs:element name="stergeStudent" type="tns:stergeStudent"/>
+<xs:element name="stergeStudentResponse" type="tns:stergeStudentResponse"/>
+<xs:complexType name="adaugaNota">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:student"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="student">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="grupa" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="note" nillable="true" type="tns:nota"/>
+      <xs:element minOccurs="0" name="nume" type="xs:string"/>
+      <xs:element minOccurs="0" name="prenume" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="nota">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="disciplina" type="xs:string"/>
+      <xs:element name="nota" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType abstract="true" name="abstractCollection">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType abstract="true" name="abstractList">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractCollection">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="arrayList">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractList">
+        <xs:sequence/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+<xs:complexType name="adaugaNotaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="returneazaStudent">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="returneazaStudentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:student"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="stergeStudent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:student"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="stergeStudentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="cautaStudent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="cautaStudentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:student"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="adaugaStudent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:student"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="adaugaStudentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

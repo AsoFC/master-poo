@@ -1,0 +1,15 @@
+wsdl2java -client 
+	-d /home/radu/workspace-jee/lab10Client/.cxftmp/src 
+	-classdir /home/radu/workspace-jee/lab10Client/build/classes 
+	-p http://lab10/=lab10 
+	-impl 
+	-validate 
+	-exsh false 
+	-dns true 
+	-dex true 
+	-wsdlLocation http://localhost:8080/lab10/services/CatalogPort?wsdl 
+	-verbose 
+	-defaultValues 
+	-fe jaxws 
+	-db jaxb 
+	-wv 1.1 file:/home/radu/workspace-jee/lab10/WebContent/wsdl/catalog.wsdl
